@@ -14,18 +14,17 @@ mylist=[]
 with open('sql_engine_dataset.csv') as fileop:
     for line in fileop.readlines():
         list_new=line.strip().split(",") # strip is to remove \n characters when split function is used
-
+        #print(list_new)
 # Creating and appending an empty list to retrieve the column values (generic)
 # Database can change the column names anytime and this code will not demand a change.
         while(i<len(list_new)):
          mylist.append(list_new[i])
-         print(mylist[i],end=' ')
+         print(mylist[i],end=', ')
          i=i+1
-
-        if(list_new[2]=='2' ):
+         if(i >= len(list_new)):
+            print('')
+        if(list_new[2]=='2' ):            
             print(" ".join(list_new))
-         
-    
 
          
 
